@@ -20,6 +20,7 @@ var port = 3000|| process.env.PORT ;
 app.use(express.static(__dirname + '/public'));
 var getApi = require('./lib/getApi/getApi.js');
 var evento=require('./lib/getApi/eventos.js');
+evento.lanzarEvento();
 
 /*
 *Conexion a la base de datos
@@ -52,5 +53,6 @@ app.listen(port);
 
 //DEBUG EN CONSOLA
 //9139
+
 console.log('data'+ getApi.jsonObject());
 console.log('ejecutamos en el puerto '+port);
