@@ -18,15 +18,19 @@ var port = 3000|| process.env.PORT ;
 *Archivos estaticos
 */ 
 app.use(express.static(__dirname + '/public'));
-var getApi = require('./lib/getApi/getApi.js');
-var evento=require('./lib/getApi/eventos.js');
+
+//var getApi = require('./lib/getApi/getApi.js');
+//var evento=require('./lib/getApi/eventos.js');
+var evento=require('./server/controllers/eventos.js');
+var control=require('./server/controllers/updtController.js');
+
 evento.lanzarEvento();
 
 /*
 *Conexion a la base de datos
 */
 
-// mongoose.connect('mongodb://localhost:27017/'); // Conexión a la base de datos
+mongoose.connect('mongodb://localhost:27017/Stock'); // Conexión a la base de datos
 
 /*
 *definimos rutas 
@@ -37,6 +41,12 @@ var router=express.Router();//creamos instancias de router de express
 *todo lo dinamico se servira con url base /api
 */
 app.use('/api',router);
+
+// Si recibes una llamada en /api/todo realiza las siguientes acciones:
+router.route('/updt')
+	.get(control.updateStock);
+	
+
 
 
 
@@ -54,5 +64,5 @@ app.listen(port);
 //DEBUG EN CONSOLA
 //9139
 
-console.log('data'+ getApi.jsonObject());
+//console.log('data'+ getApi.jsonObject());
 console.log('ejecutamos en el puerto '+port);

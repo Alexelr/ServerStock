@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es" ng-app="stockApp">
+<html lang="es" ng-app="AppStock">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,7 +9,24 @@
    <!-- y finaliza por -->
   </head>
   <body ng-controller="MainCtrl">
-    <h1>Algo</h1>
+    <h1>NADA EN TXT</h1>
+    <h2 ng-model="todo.title"> {{todo.title}}</h2>
+    <div ng-app="refresh_div" >
+    
+      <br><input type="button" ng-click="getTodos()" value="Kill Me">
+    </div>
+
+
+    <ul>
+        <li ng-repeat="todo in todos">
+          <span ng-hide="updateMode">{{todo.title}}</span>
+          <form ng-show="updateMode" ng-submit="getTodos()">
+            <input type="text" placeholder="Actualizalo" ng-model="todo.title" />
+          </form>
+          
+        </li>
+      </ul>
+
 
     
 
