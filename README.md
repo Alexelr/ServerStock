@@ -9,4 +9,10 @@ ACTION STOCK
   $ npm install
 ```
 
+## Ejecutar
+
+```shell
+  $ pm2 start server.js
+  $ pm2 status
+```
 
