@@ -12,7 +12,7 @@ var mongoose  =require('mongoose');
 var app = module.exports = express();
 app.use(bodyParser.json('application/json'));
 var client =new Client();
-var port = 3000|| process.env.PORT ;
+var port = 8080|| process.env.PORT ;
 
 /*
 *Archivos estaticos
