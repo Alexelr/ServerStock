@@ -15,3 +15,5 @@ ACTION STOCK
   $pm2 start server.js 
   $pm2 status
 ```
+
+###Abrimos un navegador en http://localhost:8080/
