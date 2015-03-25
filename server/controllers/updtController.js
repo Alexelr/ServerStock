@@ -5,7 +5,7 @@ var  stockSchema= require('../models/stockModel.js'); // Nota: No necesitamos es
 // Escribimos nuestras funciones
 module.exports = {
 
-    updateStock: function(req, res, next) {
+    updateStock: function(req, res) {
         stockSchema.updateLastStock(function(err, response) {
                 
 
@@ -19,6 +19,7 @@ module.exports = {
             } else { // Si no tenemos errores, devolvemos un mensaje satisfactorio.
                 res.json({
                     status: "OK",
+                    message:"se ha actualizadocon exito",
                     data: response
                 });
             }

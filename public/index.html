@@ -1,37 +1,197 @@
 <!DOCTYPE html>
-<html lang="es" ng-app="AppStock">
+<html lang="es" ng-app="StockApp" >
   <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Action Stock</title>
-   <link rel="stylesheet" href="/css/normalize.css">
-   <!-- y finaliza por -->
+    <title>ACTION STOCK</title>
+     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+     <script src="/js/vendor/angular/angular.min.js"></script>
+     <script src="/js/app/app.js"></script>
+     <script src="/js/app/controllers.js"></script>
+     <script src="foundation/js/vendor/modernizr.js"></script>
+     <link rel="stylesheet" href="foundation/css/foundation.css" />
+
   </head>
-  <body ng-controller="MainCtrl">
-    <h1>NADA EN TXT</h1>
-    <h2 ng-model="todo.title"> {{todo.title}}</h2>
-    <div ng-app="refresh_div" >
-    
-      <br><input type="button" ng-click="getTodos()" value="Kill Me">
-    </div>
+  <body id="body" ng-controller="MainCtrl ">
+ 
+       <header class="row">
+              <h1>Informacion Api Yahoo Finance </h1>
+              <div class="contain-to-grid sticky">
+                  <nav class="top-bar " data-topbar role="navigation" >
+                    <ul class="title-area"> 
+                        <li class="name"> 
+                          <h1><a>REAL TIME STOCK INFORMATION </a></h1>  
+                        </li>
+                     </ul>   
+                   </nav>
+              </div> 
+       </header> 
+       <section >
+            <article class="row" data-equalizer>
+              <div class="small-12 medium-4 large-4 columns panel" data-equalizer-watch>
+                    <h3>Count: {{count}}</h3>
+                    <h3> Date:
+                      {{date}}</h3>
+                    <p>
+                      La informacion listada es actualizada cada 30 segundos, se muestra una tabla comparativa donde podemos obtener resultados como ASK ,BID Change y Percente Change respectivos de cada compañia ademas podemos observar la fecha de dichos cambios en tiempo real. 
+                    </p>
+                    
+              </div> 
+              <div class=" small-12 medium-8 large-8 columns panel" data-equalizer-watch>
+                 <table id="rwd-table">
+                    <thread>
+                          <tr>
+                            <th width="100">NAME</th>
+                            <th width="100">ASK</th>
+                            <th width="100">BID</th>
+                            <th width="10">CHANGE</th>
+                            <th width="100">% CHANGE</th>
+                          </tr>
+                    </thread>
+                    <tbody>
+                            <tr>
+                              <td >Yahoo! Inc.</td>
+                              <td >{{ask1}}</td>
+                              <td >{{bid1}}</td>
+                              <td >{{change1}}</td>
+                              <td >{{percent1}}</td>
+                            </tr>
+                            <tr>
+                              <td >Apple Inc.</td>
+                              <td >{{ask2}}</td>
+                              <td >{{bid2}}</td>
+                              <td >{{change2}}</td>
+                              <td >{{percent2}}</td>
+                            </tr>
+                            <tr>
+                              <td >Google Inc.</td>
+                              <td >{{ask3}}</td>
+                              <td >{{bid3}}</td>
+                              <td >{{change3}}</td>
+                              <td >{{percent3}}</td>
+                            </tr>
+                            <tr>
+                              <td >Microsoft Corporation</td>
+                              <td >{{ask4}}</td>
+                              <td >{{bid4}}</td>
+                              <td >{{change4}}</td>
+                              <td>{{percent4}}</td>
+                            </tr>
+                            <tr>
+                              <td >International Business Machines</td>
+                              <td >{{ask5}}</td>
+                              <td >{{bid5}}</td>
+                              <td >{{change5}}</td>
+                              <td >{{percent5}}</td>
+                            </tr>
+                    </tbody>        
+                 </table>
+               </div> 
+            </article> 
+        </section>
+        <section class="row " data-equalizer>
+             
+             <section class="small-12 medium-6 large-6 columns panel" data-equalizer-watch>            
+                          <article class="row columns">
+                                   <h2>YAHOO</h2>
+                                   <ul id="lista">
+                                     <li>ASK: {{ask1}}</li>
+                                     <li>BID:{{bid1}}</li>
+                                     <li>CHANGE:{{change1}}</li>
+                                     <li>PERCENT CHANGE:{{percent1}}</li>
+                                   </ul>
+                          </article>
+                          <article class="row columns">
+                            <a class="th" href="foundation/img/Yahoo-logo.png"> <img src="foundation/img/Yahoo-logo.png"> </a>
+                          </article>  
+             </section>          
 
+             <section class="small-12 medium-6 large-6 columns panel" data-equalizer-watch>
+                          <article class="row columns">
+                               <h2>Apple Inc.</h2>
+                                  
+                                   <ul id="lista">
+                                    
+                                     <li>ASK: {{ask2}}</li>
+                                     <li>BID:{{bid2}}</li>
+                                     <li>CHANGE:{{change2}}</li>
+                                     <li>PERCENT CHANGE:{{percent2}}</li>
+                                   </ul>                     
+                          </article>
+                            <article class="row columns">
+                            <a class="th" href="foundation/img/apple.png"> <img src="foundation/img/apple.png"> </a>
+                          </article>  
+             </section> 
 
-    <ul>
-        <li ng-repeat="todo in todos">
-          <span ng-hide="updateMode">{{todo.title}}</span>
-          <form ng-show="updateMode" ng-submit="getTodos()">
-            <input type="text" placeholder="Actualizalo" ng-model="todo.title" />
-          </form>
-          
-        </li>
-      </ul>
+             <section class="small-12 medium-6 large-6 columns panel" data-equalizer-watch>
+                          <article class="row columns">
+                               
+                                  <h2>Google Inc.</h2>
+                                    
+                                     <ul id="lista">
+                                       
+                                       <li>ASK: {{ask3}}</li>
+                                       <li>BID:{{bid3}}</li>
+                                       <li>CHANGE:{{change3}}</li>
+                                       <li>PERCENT CHANGE:{{percent3}}</li>
+                                     </ul>
+                                   
+                          </article>
+                            <article class="row columns">
+                            <a class="th" href="foundation/img/google.png"> <img src="foundation/img/google.png"> </a>
+                          </article>  
 
+             </section> 
 
-    
+             <section class="small-12 medium-6 large-6 columns panel" data-equalizer-watch>
+                          <article class="row columns">
+                                  
+                                  <h2>Microsoft Corporation</h2>
+                                    
+                                     <ul id="lista">
+                                       
+                                       <li>ASK: {{ask4}}</li>
+                                       <li>BID:{{bid4}}</li>
+                                       <li>CHANGE:{{change4}}</li>
+                                       <li>PERCENT CHANGE:{{percent4}}</li>
+                                     </ul>
+                                
+                          </article>
+                            <article class="row columns">
+                            <a class="th" href="foundation/img/microsoft.png"> <img src="foundation/img/microsoft.png"> </a>
+                          </article>  
+             </section>
 
-    <script src="/js/vendor/angular/angular.min.js"></script>
-    <script src="/js/app/app.js"></script>
-    <script src="/js/app/controllers.js"></script>
+             <section class="small-12 medium-6 large-6 columns panel" data-equalizer-watch> 
+                          <article class="row columns">
+                                 
+                                  <h2>International Business Machines</h2>
+                                    
+                                     <ul id="lista">
+                                       
+                                       <li>ASK: {{ask5}}</li>
+                                       <li>BID:{{bid5}}</li>
+                                       <li>CHANGE:{{change5}}</li>
+                                       <li>PERCENT CHANGE:{{percent5}}</li>
+                                     </ul>
+                                   
+                          </article>
+
+                            <article class="row columns">
+                            <a class="th" href="foundation/img/ibm.png"> <img src="foundation/img/ibm.png"> </a>
+                          </article>  
+              
+             </section>
+        </section> 
+        
+        <footer>
+            <p> ALEJANDRO RODRIGUEZ VAZQUEZ</p>
+             <p>Contact information: <a href="alejandro.rod.vazquez@gmail.com">
+             alejandro.rod.vazquez@gmail.com</a>.</p>
+        </footer> 
+
+        <script src="foundation/js/vendor/jquery.js"></script>
+        <script src="foundation/js/foundation.min.js"></script>
+        <script>
+            $(document).foundation();
+        </script>
   </body>
 </html>
