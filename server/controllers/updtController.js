@@ -1,6 +1,11 @@
+/*
+*Modulo controlador para actualizaar nuestro DOM
+*cada que es llamada esta funcion hace una apticion a nuestro modelo 
+*/
 
     //Incluímos nuestro modelo para poder interactuar con él
-var  stockSchema= require('../models/stockModel.js'); // Nota: No necesitamos especificar extensión si es .js
+var  stockSchema= require('../models/stockModel.js');
+
 
 // Escribimos nuestras funciones
 module.exports = {

@@ -1,10 +1,12 @@
+/*
+*Modulo encargado de controlar las peticiones en cierto intervalo de tiempo,si genera algun error es capturado en un dominio
+*/
+
 var eventos = require('events');
 var getApi=require('./getController.js');
 
 var EmisorEventos = eventos.EventEmitter;
 var ee = new EmisorEventos();
-var promise = require('promises-promises');
-var q = require('q');
 
 
 var Client=require('node-rest-client').Client;

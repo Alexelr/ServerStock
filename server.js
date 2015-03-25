@@ -42,13 +42,15 @@ var router=express.Router();//creamos instancias de router de express
 */
 app.use('/api',router);
 
-// Si recibes una llamada en /api/todo realiza las siguientes acciones:
+// Si recibes una llamada en /api/updt realiza las siguientes acciones:
 router.route('/updt')
 	.get(control.updateStock);
 	
 
 
-
+/*
+*respuesta de 404
+*/
 
 app.all('*', function(req,res){
    res.status(400);
@@ -56,13 +58,5 @@ app.all('*', function(req,res){
 });
 
 
-
-
-
 app.listen(port);
-
-//DEBUG EN CONSOLA
-//9139
-
-//console.log('data'+ getApi.jsonObject());
 console.log('ejecutamos en el puerto '+port);

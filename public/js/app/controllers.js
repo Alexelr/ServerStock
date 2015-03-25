@@ -6,19 +6,12 @@
 
 angular.module('StockApp.controllers', [])
     .controller('MainCtrl', ['$scope', '$http','$interval', function($scope, $http,$interval) {
-        $scope.algo="esto funciona con angular";
-        $scope.ok="confirmed";
-        //$scope.count="5";
+        $scope.algo="";
+        $scope.ok="";
         $scope.date=Date.now();
-        $scope.count= "Waiting 2000ms for update";
-        //$timeout(function(){console.log('nada de nada desde angular con timeout')},1000);
-  ///////////////////////////////////
-
-
-
-  /////////////////////////////////////
-    //probando codigo 
-$interval(callAtInterval, 10000);
+        $scope.count= "";
+  
+$interval(callAtInterval, 5000);
 
 
 function callAtInterval() {
@@ -73,10 +66,6 @@ function callAtInterval() {
 
 }
 
-//////////////////////////////////////////////////
-
-
-  /////////////////////////////
          
 
             $scope.update=function(){
@@ -85,9 +74,7 @@ function callAtInterval() {
 
                 $http.get("/api/updt").success(function(response) {
                 if(response.status === "OK") {
-                    //$scope.ask1=response.data.ask1;
-
-                    //////////////////////
+                    
 
 
                             $scope.ask1=response.data.data.ask1;
