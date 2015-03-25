@@ -1,15 +1,12 @@
 #DESCRIPCION
 
-Todo se encuentra dentro de la carpeta ServerStock 
- 
-
-La carpeta que contiene todo es ServerStock dentro de esta se encuentra el script principal que es server.js desde aca solo ruteo con express para que pueda consumirse el recurso de datos a mostrar,y agrego solo los modulos para poder usarlos ,tengo 3 modulos principales que se encuentran en la carpeta /server/controlers estos son los que controlan la parte del servidor,para  consumir la APi 
+La carpeta que contiene todo es ServerStock dentro de esta se encuentra el script principal que es server.js desde acá solo ruteo con express para que pueda consumirse el recurso de datos a mostrar, y agrego solo los módulos para poder usarlos ,tengo 3 módulos principales que se encuentran en la carpeta /server/controlers estos son los que controlan la parte del servidor, para consumir la APi 
 
 ###getController.js 
-donde  uso client-request con promises ,cada ves que es llamado este ingresa los valores obtenidos en nuestra base de datos , este pasara los datos a mi modelo para ir ingresando cada objeto capturado asi como el Parseo a JSon ,este modulo es llamado por eventos.js 
+Donde  uso client-request con promises ,cada vez que es llamado este ingresa los valores obtenidos en nuestra base de datos , este pasara los datos a mi modelo para ir ingresando cada objeto capturado así como el Parseo a JSon ,este modulo es llamado por eventos.js
 
 ###eventos.js
-Como su nombre lo dice maneja por eventos a el modulo de getController,cada 10 segundos este ejecuta
+Como su nombre lo indica maneja por eventos a el modulo de getController,cada 10 segundos este ejecuta.
 
 ###updtController.js
 
@@ -27,9 +24,9 @@ para comprobar que los datos son obtenidos por nuestra api declarada con epress 
 nos devolvera un objeto json ,este es el que se desompone para ser usado en nuestro scope.
 dentro de esta misma carptea /js tenemos 404.html y index.html
 
-404 es para surtir una pagin estatica de una peticion invalida,dando pocos detalles de la solicitud y arrojando un 404 como codigo de error.
+404 es para surtir una pagina estatica de una peticion invalida,dando pocos detalles de la solicitud y arrojando un 404 como codigo de error.
 
-inde.html es la pagina ecargada de mostrar todos los datos como ya se menciono se uso el fram Foundation 5 para hacer la pagin responsiva y solo mostramos una pequeña tabla comparativa y los datos independientes de cada compañia cada vez que se realiza la peticion get ,se muestra la fecha de la solicitud a la APi de yahoo este dato es guardado en nuestra base de datos y es enviado a nuestro DOM para verificar que en efecto se obtiene datos en tiempo real.
+index.html es la pagina ecargada de mostrar todos los datos como ya se menciono se uso el frame Foundation 5 para hacer la pagina responsiva y solo mostramos una pequeña tabla comparativa y los datos independientes de cada compañia cada vez que se realiza la peticion get ,se muestra la fecha de la solicitud a la APi de yahoo este dato es guardado en nuestra base de datos y es enviado a nuestro DOM para verificar que en efecto se obtienen datos en tiempo real.
 
 
 
@@ -43,6 +40,9 @@ Mostrar los datos en una pagina web
  Controlador y modelo -->/public/js/app  archivos --> app.js   controller.js
 frontend index y 404 ----->public/js/   archivos -->index.html 404.html
 ruteo y manejo de modularidad desde el archivo principal ---> server.js
+
+
+Como puedes ver use Mongo,Expres,Node,Angular y foundation 5 
   
 
 
